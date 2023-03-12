@@ -23,3 +23,5 @@ iptables -t mangle -I PREROUTING -i $ETH1 -j TTL --ttl-set 58
 iptables -t mangle -I PREROUTING -i $BRLAN -j TTL --ttl-set 58
 iptables -t mangle -I POSTROUTING -o $USB0 -j TTL --ttl-set 58
 ```
+# Support Me
+https://saweria.co/vincher
