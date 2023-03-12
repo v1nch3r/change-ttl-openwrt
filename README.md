@@ -5,12 +5,15 @@ Kalau Silahkan Edit/Tambah Interface Yang Menurut Situ Jalur Masuk Keluar Intern
 buka custom rules lalu tambahkan dan sesuaikan dengan script di bawah ini
 
 ### Interface
+```yaml
 ETH0="eth0"
 ETH1="eth1"
 BRLAN="br-lan"
 USB0="usb0"
+```
 
 ### TTL Bypass
+```yaml
 iptables -t mangle -I POSTROUTING -o $ETH0 -j TTL --ttl-set 58
 iptables -t mangle -I POSTROUTING -o $ETH1 -j TTL --ttl-set 58
 iptables -t mangle -I POSTROUTING -o $BRLAN -j TTL --ttl-set 58
@@ -19,3 +22,4 @@ iptables -t mangle -I PREROUTING -i $ETH0 -j TTL --ttl-set 58
 iptables -t mangle -I PREROUTING -i $ETH1 -j TTL --ttl-set 58
 iptables -t mangle -I PREROUTING -i $BRLAN -j TTL --ttl-set 58
 iptables -t mangle -I POSTROUTING -o $USB0 -j TTL --ttl-set 58
+```
